@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <title>Lançamento de Projéteis - Projeto de Física</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="simulation_container">
+
+    <div class="simulation-type-box">
+      <h2>Tipo de Simulação</h2>
+      <div class="radio-group">
+        <!-- <label>
+          <input type="radio" name="simulation-type" value="no-drag" id="no-drag" >
+          Simulação Sem Arrasto
+        </label> -->
+        <label>
+          <input type="radio" name="simulation-type" value="with-drag" id="with-drag" checked>
+          Simulação Com Arrasto
+        </label>
+      </div>
+    </div>
+    
+    <div class="config-box">
+      <h2>Configurações</h2>
+      
+      <div class="config-item">
+        <label for="angulo">Ângulo (°): 
+          <input type="text" id="angulo-text" value="45" class="text-input">
+        </label>
+        <input type="range" id="angulo" min="25" max="90" value="45">
+      </div>
+      
+      <div class="config-item">
+        <label for="massa">Massa (Kg): 
+          <input type="text" id="massa-text" value="2.5" class="text-input">
+        </label>
+        <input type="range" id="massa" min="0.01" max="5.00" value="2.5" step="0.01">
+      </div>
+
+      <div class="config-item">
+        <label for="diametro">Diâmetro (m): 
+          <input type="text" id="diametro-text" value="0.5" class="text-input">
+        </label>
+        <input type="range" id="diametro" min="0.01" max="1.00" step="0.01" value="0.5">
+      </div>
+      
+      <div class="config-item">
+        <label for="gravidade">Gravidade (m/s²): 
+          <input type="text" id="gravidade-text" value="9.81" class="text-input">
+        </label>
+        <input type="range" id="gravidade" min="5.00" max="20" step="0.01" value="9.81">
+      </div>
+      
+      <button onclick="lancar()">Lançar</button>
+    </div>
+
+    <div class="velocity-box">
+      <div class="velocity-info">
+        <span class="velocity-label">Velocidade inicial:</span>
+        <span class="velocity-valor" id="velocity-valor">18 m/s</span>
+      </div>
+      <input
+        type="range"
+        min="0"
+        max="30"
+        value="18"
+        id="velocity-range"
+        class="velocity-slider"
+      />
+    </div>
+    
+    <canvas id="canvas" width="500" height="500">
+      <h3>Seu navegador não suporta a simulação. Tente usar outro navegador</h3>
+    </canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

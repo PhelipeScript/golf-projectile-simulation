@@ -1,0 +1,209 @@
+:root {
+  --cor_ceu: #87CEEB;
+  --cor_texto: #333;
+}
+
+body {
+  background-color: #f4f4f9;
+  font-family: "Roboto", sans-serif;
+}
+
+simulation_container {
+  position: relative;
+  max-width: 1440px;
+  border: 1px solid red;
+}
+
+#canvas {
+  box-shadow: 0px 0px 2px 0px #000;
+  border-radius: 12px;
+  /* width: calc(100vw - 340px); */
+  height: calc(100vh - 22px);
+  background-image: url(./assets/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.simulation-type-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  top: 15px;
+  right: 22px;
+  width: 250px;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--cor_ceu);
+}
+
+.simulation-type-box h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 5px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1rem;
+  color: #333; /* Cor padrão do texto */
+  background-color: #f4f4f9; /* Fundo padrão */
+  border: 2px solid #ccc; /* Borda padrão */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.radio-group label.active {
+  background-color: var(--cor_ceu); /* Fundo azul */
+  color: #fff; /* Texto branco */
+  border-color: var(--cor_ceu); /* Borda azul */
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group label:hover {
+  background-color: #4682B4; /* Fundo claro no hover */
+  border-color: #4682B4;
+  color: #FFF;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  background-color: var(--cor_ceu);
+  color: #fff;
+  border-color: var(--cor_ceu);
+}
+
+.config-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 220px;
+  padding: 15px 20px;
+  background-color: #f4f4f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid var(--cor_ceu);
+}
+
+.config-box h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--cor_texto);
+  margin: 0px 0px 15px;
+}
+
+.config-item {
+  margin-bottom: 20px;
+}
+
+.config-box label {
+  font-size: 1rem;
+  color: var(--cor_texto);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.config-box .text-input {
+  width: 60px;
+  padding: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  background: #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #f4f4f9;
+  border: 2px solid var(--cor_ceu);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f4f4f9;
+  border: 2px solid var(--cor_ceu);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--cor_ceu);
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4682B4;
+}
+
+.velocity-box {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  background-color: #f4f4f9;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 170px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid var(--cor_ceu); 
+}
+
+.velocity-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.velocity-label, .velocity-valor {
+  font-size: 0.865rem;
+  font-weight: bold;
+}
