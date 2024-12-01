@@ -91,6 +91,21 @@ simulation_container {
   border-color: var(--cor_ceu);
 }
 
+.documentation-link {
+  text-decoration: none;
+
+  & button {
+    background-color: #6c757d; 
+    color: #FFF;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  & button:hover {
+    background-color: #555f66; 
+  }
+}
+
 .config-box {
   position: absolute;
   top: 10px;
